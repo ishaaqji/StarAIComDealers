@@ -1,0 +1,25 @@
+{
+  "name": "@star-ai/installer",
+  "private": true,
+  "description": "Star AI Local AI Installer — hardware detection, model selection, runtime install, activation (Electron or CLI)",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "detect": "tsx src/detect-hardware.ts"
+  },
+  "dependencies": {
+    "systeminformation": "^5.21.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

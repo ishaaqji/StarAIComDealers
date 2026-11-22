@@ -1,0 +1,34 @@
+{
+  "name": "star-ai-platform",
+  "private": true,
+  "description": "Star AI Platform V1 — multi-tenant AI operating layer for local electronics dealers",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/backend",
+    "apps/dashboard",
+    "apps/installer",
+    "packages/types",
+    "packages/schema",
+    "packages/utils"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev --workspace=apps/backend\" \"npm:dev --workspace=apps/dashboard\"",
+    "build": "npm run build --workspaces",
+    "db:migrate": "node ./apps/backend/scripts/run-migrations.js",
+    "db:seed": "node ./apps/backend/scripts/seed.js",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p apps/backend/tsconfig.json",
+    "test": "jest --config apps/backend/jest.config.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  }
+}

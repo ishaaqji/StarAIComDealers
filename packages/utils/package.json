@@ -1,0 +1,8 @@
+{
+  "name": "@star-ai/utils",
+  "private": true,
+  "description": "Shared validation + error-handling helpers",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.ts"
+}
